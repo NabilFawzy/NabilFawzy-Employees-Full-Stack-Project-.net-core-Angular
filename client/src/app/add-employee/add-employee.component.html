@@ -1,0 +1,103 @@
+
+
+
+  <div class="flex flex-row w-[100%] justify-end">
+
+
+    <div class="w-[100%] mt-3">
+      <button class="buttonEdit"
+       (click)="onSave()">Save
+      </button></div>
+  </div>
+  <div class="container w-[100%]  flex flex-col">
+    <div class=" w-[100%]">
+    </div>
+    <div class=" w-[100%]">
+
+      <div class="pr-7 pt-8 pb-2  flex flex-col w-[100%]">
+
+        <div>
+            <p class="lblval">Add Student   </p>
+        </div>
+
+        <div  class="items-center " >
+            <form class="w-[100%] sm:flex sm:flex-col font-semibold text-base mx-auto">
+
+              <div class="flex flex-col mt-3">
+                <label class="lblval" >Full Name</label>
+                <input class="sm:w-[100%]  md:w-[100%]  border border-gray-200 mt-2 rounded-md"
+                [(ngModel)]="employee.fullName"
+                name="employee.fullName"
+                type="text" placeholder="Full Name"/>
+
+              </div>
+
+              <div class="flex flex-col mt-3">
+                <label>User Name</label>
+                <input class="sm:w-[100%]  md:w-[100%]  border border-gray-200 mt-2 rounded-md"
+                [(ngModel)]="employee.userName"
+                name="employee.userName"
+                type="text" placeholder="user Name"/>
+
+              </div>
+              <div class="flex flex-col mt-3">
+                <label>Email </label>
+                <input class="sm:w-[100%]  md:w-[100%]  border border-gray-200 mt-2 rounded-md"
+                [(ngModel)]="employee.email"
+                name="employee.email"
+                type="text" placeholder="email"/>
+
+              </div>
+              <div class="flex flex-col mt-3">
+                <label>password </label>
+                <input class="sm:w-[100%]  md:w-[100%]  border border-gray-200 mt-2 rounded-md"
+                [(ngModel)]="employee.password"
+                name="employee.password"
+                type="password" placeholder="password"/>
+
+              </div>
+              <div class="flex flex-col mt-3">
+                <label>Job</label>
+                <input class="sm:w-[100%]  md:w-[100%]  border border-gray-200 mt-2 rounded-md"
+                [(ngModel)]="employee.job"
+                name="employee.job"
+                type="text" placeholder="job"/>
+
+              </div>
+
+
+
+              <div class="flex flex-col mt-3">
+                <label>User Type</label>
+                <select
+                style="font-size:20px"
+                class="sm:w-[90%]  md:w-[100%] border border-gray-200 mt-2 rounded-md"
+                name="employee.isAdmin"
+                 [(ngModel)]="employee.isAdmin">
+                    <option [value]="true">Admin</option>
+                    <option  [value]="false">Employee</option>
+                </select>
+              </div>
+
+
+              <div class="flex flex-col mt-3">
+                <label class="mt-2">Position Type</label>
+                <select class="sm:w-[90%]  md:w-[100%] border border-gray-200 mt-2 rounded-md"
+                style="font-size:20px"
+                name="employee.positionTypeId"
+                [(ngModel)]="employee.positionTypeId">
+                    <option *ngFor="let position of positionTypes" [value]="position.id">{{position.name}}</option>
+                </select>
+              </div>
+
+
+            </form>
+        </div>
+
+
+
+      </div>
+
+  </div>
+  </div>
+

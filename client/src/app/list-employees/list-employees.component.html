@@ -1,0 +1,73 @@
+<div class="container w-[100%]  flex flex-col">
+
+  <div class=" w-[100%]">
+    <button class="buttonEdit" [routerLink]="['/add-employee']">ADD Employee</button>
+  </div>
+
+  <div class=" w-[100%]">
+  </div>
+
+  <div class="w-[100%] flex flex-col">
+<div class="w-[100%] overflow-auto">
+  <table class="w-[100%] whitespace-nowrap font-semibold text-sm overflow-x-scroll">
+    <tr class="bg-[#F6F8FB] text-[#223354] ">
+
+      <th class="py-2 px-8">Full Name</th>
+      <th class="py-2 px-8">username</th>
+      <th class="py-2 px-8">Email </th>
+      <th class="py-2 px-8">Job</th>
+      <th class="py-2 px-8">Position Type</th>
+      <th class="py-2 px-8"></th>
+
+
+    </tr>
+
+    <tr class="h-20 text-[#A0A3BD]  i"  *ngFor="let emp of employees let i = index">
+
+
+      <td class="py-2 px-2 whitespace-nowrap text-[#223354] opacity-50">
+        <input  placeholder="Full Name" [(ngModel)]="emp.fullName"   class=" bg-white flex items-center text-center font-cairo  text-lg text-#A0A3BD py-3 px-6 rounded-xl border border-gray-400">
+
+      </td>
+
+      <td class="py-2 px-2 whitespace-nowrap text-[#223354] opacity-50">
+        <input  placeholder="User Name" [(ngModel)]="emp.userName"   class=" bg-white flex items-center text-center font-cairo  text-lg text-#A0A3BD py-3 px-6 rounded-xl border border-gray-400">
+      </td>
+
+      <td class="py-2 px-2 whitespace-nowrap text-[#223354] opacity-50">
+        <input  placeholder=" Email" [(ngModel)]="emp.email"   class=" bg-white flex items-center text-center font-cairo  text-lg text-#A0A3BD py-3 px-6 rounded-xl border border-gray-400">
+      </td>
+
+      <td class="py-2 px-2 whitespace-nowrap text-[#223354] opacity-50">
+        <input  placeholder=" job" [(ngModel)]="emp.job"   class=" bg-white flex items-center text-center font-cairo  text-lg text-#A0A3BD py-3 px-6 rounded-xl border border-gray-400">
+
+      </td>
+
+      <td class="py-2 px-2 whitespace-nowrap text-[#223354] opacity-50">
+
+        <select name = "emp.positionTypeId"
+
+        [(ngModel)]="emp.positionTypeId"
+         class="w-[90%] border border-gray-200 mt-1 rounded-md"  (change)="updateEmp(emp)" >
+          <option *ngFor="let position of positionTypes" [value]="position.id">{{position.name}}</option>
+        </select>
+
+      </td>
+      <td class="py-2 px-2 whitespace-nowrap text-[#223354] opacity-50">
+      </td>
+
+
+      <td [hidden]="true">
+      </td>
+      <td [hidden]="true">
+    </td>
+
+  <td  [hidden]="true" class="py-2 px-2 whitespace-nowrap text-[#223354] opacity-50">
+  </td>
+
+       <td><button class="buttonEdit"  (click)="onEdit(emp)">Edit</button></td>
+       <td><button class="buttonRemove"  (click)="onDelete(emp)">Delete</button></td>
+    </tr>
+  </table>
+</div>
+</div></div>
